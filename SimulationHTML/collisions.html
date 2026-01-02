@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Collisions Simulation</title>
+    <link rel="stylesheet" href="../stylesheets/style.css">
+    <link rel="stylesheet" href="../stylesheets/homePage.css">
+    <link rel="stylesheet" href="../stylesheets/simulationUI.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.9.0/lib/p5.min.js"></script>
+</head>
+<body>
+    <nav class="pixel-navbar pixel-border-rounded">
+        <a href="../index.html" class="pixel-home-icon fa-solid fa-house" title="Home" aria-label="Home"></a>
+        <h1 class="pixel-title">Collisions</h1>
+        <button class="about-btn" title="About" aria-label="About">
+            <span class="fa-solid fa-circle-info"></span>
+        </button>
+        <div class="about-popout" id="aboutPopout" tabindex="-1" aria-hidden="true">
+            <div class="about-popout-content">
+                <h2>About</h2>
+                <p>
+                    This simulation demonstrates 2D elastic collisions between balls of different masses and velocities in a bounded space.
+                </p>
+            </div>
+        </div>
+    </nav>
+    <main class="pixel-main">
+        <div class="simulation-item pixel-border-rounded" style="width: 1200px; margin: 2rem auto; padding: 2rem 2rem 1.5rem 2rem; box-shadow: 0 2px 12px #0003; background: #23272e; display: flex; flex-direction: column; align-items: center;">
+            <h2 style="margin-bottom: 0.5rem; color: #b0c4ff;">Collisions</h2>
+            <p style="margin-bottom: 1.5rem; color: #b0c4ff; text-align: center;">Watch elastic collisions between balls with different masses. Click to add balls with random velocities and observe momentum conservation.</p>
+            <div id="simulation-canvas-placeholder" style="width: 1000px; height: 600px; display: flex; justify-content: center; align-items: center; background: #181a20; border-radius: 12px; margin-bottom: 1.5rem;"></div>
+            <div class="simulation-sliders" style="width: 100%; display: flex; flex-direction: column; align-items: center; gap: 1.2rem;">
+                <div class="simulation-slider-group">
+                    <label for="gravitySlider">gravity</label>
+                    <input type="range" id="gravitySlider" class="simulation-slider" min="0" max="1" value="0.2" step="0.1">
+                    <span class="simulation-slider-value" id="gravityValue">0.2</span>
+                </div>
+                <div class="simulation-slider-group">
+                    <label for="dampingSlider">energy loss</label>
+                    <input type="range" id="dampingSlider" class="simulation-slider" min="0.9" max="1" value="0.98" step="0.01">
+                    <span class="simulation-slider-value" id="dampingValue">0.98</span>
+                </div>
+                <div style="text-align:center; color:#b0c4ff; font-size:0.95rem; margin-top:0.5rem;">Click to add balls | SPACE to pause | R to reset | C to clear all</div>
+            </div>
+        </div>
+    </main>
+    <script src="../index.js"></script>
+    <script src="../SimulationJS/collisions.js"></script>
+</body>
+</html>
+

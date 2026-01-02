@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Friction Simulation</title>
+    <link rel="stylesheet" href="../stylesheets/style.css">
+    <link rel="stylesheet" href="../stylesheets/homePage.css">
+    <link rel="stylesheet" href="../stylesheets/simulationUI.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.9.0/lib/p5.min.js"></script>
+</head>
+<body>
+    <nav class="pixel-navbar pixel-border-rounded">
+        <a href="../index.html" class="pixel-home-icon fa-solid fa-house" title="Home" aria-label="Home"></a>
+        <h1 class="pixel-title">Friction</h1>
+        <button class="about-btn" title="About" aria-label="About">
+            <span class="fa-solid fa-circle-info"></span>
+        </button>
+        <div class="about-popout" id="aboutPopout" tabindex="-1" aria-hidden="true">
+            <div class="about-popout-content">
+                <h2>About</h2>
+                <p>
+                    This simulation demonstrates static and kinetic friction forces. Adjust the applied force and friction coefficient to explore different friction scenarios.
+                </p>
+            </div>
+        </div>
+    </nav>
+    <main class="pixel-main">
+        <div class="simulation-item pixel-border-rounded" style="width: 1200px; margin: 2rem auto; padding: 2rem 2rem 1.5rem 2rem; box-shadow: 0 2px 12px #0003; background: #23272e; display: flex; flex-direction: column; align-items: center;">
+            <h2 style="margin-bottom: 0.5rem; color: #b0c4ff;">Friction</h2>
+            <p style="margin-bottom: 1.5rem; color: #b0c4ff; text-align: center;">Explore static and kinetic friction on different surfaces. Watch how the object starts moving when applied force exceeds static friction.</p>
+            <div id="simulation-canvas-placeholder" style="width: 1000px; height: 600px; display: flex; justify-content: center; align-items: center; background: #181a20; border-radius: 12px; margin-bottom: 1.5rem;"></div>
+            <div class="simulation-sliders" style="width: 100%; display: flex; flex-direction: column; align-items: center; gap: 1.2rem;">
+                <div class="simulation-slider-group">
+                    <label for="forceSlider">applied force (N)</label>
+                    <input type="range" id="forceSlider" class="simulation-slider" min="0" max="50" value="10" step="1">
+                    <span class="simulation-slider-value" id="forceValue">10 N</span>
+                </div>
+                <div class="simulation-slider-group">
+                    <label for="frictionSlider">friction coefficient (μ)</label>
+                    <input type="range" id="frictionSlider" class="simulation-slider" min="0.1" max="1" value="0.3" step="0.05">
+                    <span class="simulation-slider-value" id="frictionValue">0.3</span>
+                </div>
+                <div style="text-align:center; color:#b0c4ff; font-size:0.95rem; margin-top:0.5rem;">Observe static vs kinetic friction behavior.</div>
+            </div>
+        </div>
+    </main>
+    <script src="../index.js"></script>
+    <script src="../SimulationJS/friction.js"></script>
+</body>
+</html>
+

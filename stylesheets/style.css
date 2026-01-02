@@ -1,0 +1,193 @@
+/* General Material/Pixel UI Styles */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+body {
+    background: #121212;
+    color: #e0e0e0;
+    font-family: 'Roboto', Arial, sans-serif;
+    margin: 0;
+    min-height: 100vh;
+}
+
+.pixel-header {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 0;
+    margin: 0;
+    position: relative;
+}
+
+.pixel-title {
+    flex: 1;
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin: 0;
+    color: #fff;
+}
+
+.pixel-btn {
+    background: #23272f;
+    color: #fff;
+    border: 2px solid #3c3f4a;
+    border-radius: 0;
+    font-family: inherit;
+    font-size: 1rem;
+    padding: 10px 24px;
+    cursor: pointer;
+    transition: background 0.2s;
+    outline: none;
+}
+.pixel-btn:active {
+    background: #181a20;
+}
+
+.pixel-navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #23272f;
+    padding: 16px 40px;
+    margin: 24px 32px 0 32px;
+    border-radius: 18px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+    min-height: 56px;
+}
+
+.pixel-border-rounded {
+    border-radius: 16px;
+    border: none;
+    overflow: hidden;
+}
+
+.pixel-home-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 48px;
+    width: 48px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 2rem;
+    color: #e0e0e0;
+    transition: background 0.2s, color 0.2s;
+    margin-right: 0;
+    background: transparent;
+    border: none;
+    line-height: 1;
+    padding: 0;
+}
+.pixel-home-icon:hover {
+    background: #232323;
+}
+.pixel-home-icon > .fa-house {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    font-size: 2rem;
+    line-height: 1;
+    margin: 0;
+    padding: 0;
+}
+.pixel-home-icon.material-symbols-outlined {
+    margin-right: auto;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    background: none;
+    font-size: 32px;
+    color: #e0e0e0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.pixel-home-icon.material-symbols-outlined:hover {
+    background: #232323;
+    color: #2196f3;
+}
+
+/* Utility */
+.pixel-border {
+    border: none;
+}
+
+.material-symbols-outlined {
+    font-variation-settings:
+        'FILL' 0,
+        'wght' 400,
+        'GRAD' 0,
+        'opsz' 24;
+    font-size: 28px;
+    color: #e0e0e0;
+    vertical-align: middle;
+    user-select: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+    transition: color 0.2s, background 0.2s;
+}
+
+.about-btn .material-symbols-outlined {
+    font-size: 28px;
+    color: #e0e0e0;
+}
+.about-btn:hover .material-symbols-outlined {
+    color: #2196f3;
+}
+
+.about-btn {
+    background: #23272f;
+    border: none;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #b0b6c3;
+    font-size: 20px;
+    margin-left: 12px;
+    transition: background 0.2s;
+}
+.about-btn:hover {
+    background: #323846;
+    color: #5c6bc0;
+}
+.about-popout {
+    position: absolute;
+    top: 70px;
+    right: 48px;
+    background: #23272f;
+    color: #e3e6ee;
+    border-radius: 16px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.18);
+    padding: 24px 32px;
+    min-width: 320px;
+    z-index: 100;
+    display: none;
+}
+.about-popout[aria-hidden="false"] {
+    display: block;
+}
+.about-popout-content h2 {
+    margin-top: 0;
+    color: #e3e6ee;
+    font-size: 1.3em;
+    font-weight: 600;
+}
+.about-popout-content p {
+    color: #b0b6c3;
+    font-size: 1em;
+    margin-bottom: 0;
+}
+.pixel-main {
+    margin: 0 auto;
+    max-width: 1300px;
+    padding-bottom: 48px;
+}

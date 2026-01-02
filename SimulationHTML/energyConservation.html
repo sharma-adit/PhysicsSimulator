@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Conservation of Energy Simulation</title>
+    <link rel="stylesheet" href="../stylesheets/style.css">
+    <link rel="stylesheet" href="../stylesheets/homePage.css">
+    <link rel="stylesheet" href="../stylesheets/simulationUI.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.9.0/lib/p5.min.js"></script>
+</head>
+<body>
+    <nav class="pixel-navbar pixel-border-rounded">
+        <a href="../index.html" class="pixel-home-icon fa-solid fa-house" title="Home" aria-label="Home"></a>
+        <h1 class="pixel-title">Conservation of Energy</h1>
+        <button class="about-btn" title="About" aria-label="About">
+            <span class="fa-solid fa-circle-info"></span>
+        </button>
+        <div class="about-popout" id="aboutPopout" tabindex="-1" aria-hidden="true">
+            <div class="about-popout-content">
+                <h2>About</h2>
+                <p>
+                    This simulation demonstrates conservation of mechanical energy in a pendulum-like system with adjustable damping.
+                </p>
+            </div>
+        </div>
+    </nav>
+    <main class="pixel-main">
+        <div class="simulation-item pixel-border-rounded" style="width: 1200px; margin: 2rem auto; padding: 2rem 2rem 1.5rem 2rem; box-shadow: 0 2px 12px #0003; background: #23272e; display: flex; flex-direction: column; align-items: center;">
+            <h2 style="margin-bottom: 0.5rem; color: #b0c4ff;">Conservation of Energy</h2>
+            <p style="margin-bottom: 1.5rem; color: #b0c4ff; text-align: center;">Track energy transformations in a swinging ball system. Observe how kinetic and potential energy exchange while total energy remains constant.</p>
+            <div id="simulation-canvas-placeholder" style="width: 1000px; height: 600px; display: flex; justify-content: center; align-items: center; background: #181a20; border-radius: 12px; margin-bottom: 1.5rem;"></div>
+            <div class="simulation-sliders" style="width: 100%; display: flex; flex-direction: column; align-items: center; gap: 1.2rem;">
+                <div class="simulation-slider-group">
+                    <label for="lengthSlider">string length (m)</label>
+                    <input type="range" id="lengthSlider" class="simulation-slider" min="1" max="5" value="2" step="0.1">
+                    <span class="simulation-slider-value" id="lengthValue">2 m</span>
+                </div>
+                <div class="simulation-slider-group">
+                    <label for="massSlider">mass (kg)</label>
+                    <input type="range" id="massSlider" class="simulation-slider" min="0.5" max="5" value="1" step="0.1">
+                    <span class="simulation-slider-value" id="massValue">1 kg</span>
+                </div>
+                <div class="simulation-slider-group">
+                    <label for="dampingSlider">damping</label>
+                    <input type="range" id="dampingSlider" class="simulation-slider" min="0" max="0.02" value="0" step="0.002">
+                    <span class="simulation-slider-value" id="dampingValue">0</span>
+                </div>
+                <div style="text-align:center; color:#b0c4ff; font-size:0.95rem; margin-top:0.5rem;">Click to set initial angle | E to toggle energy display</div>
+            </div>
+        </div>
+    </main>
+    <script src="../index.js"></script>
+    <script src="../SimulationJS/energyConservation.js"></script>
+</body>
+</html>
+

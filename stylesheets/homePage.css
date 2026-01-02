@@ -1,0 +1,157 @@
+/* Homepage-specific layout */
+.pixel-navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0;
+    position: relative;
+    min-height: 64px;
+    margin: 32px 32px 0 32px;
+    background: #1f1f1f;
+    padding: 0 32px;
+    border-bottom: 1px solid #232323;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+.home-btn {
+    align-self: flex-start;
+    margin-right: auto;
+}
+.pixel-home-icon, .about-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 20px;
+    color: #e0e0e0;
+    transition: background 0.2s, color 0.2s;
+    background: transparent;
+    border: none;
+    line-height: 1;
+    padding: 0;
+    margin: 0;
+}
+.pixel-home-icon:hover, .about-btn:hover, .about-btn:active {
+    background: #232323;
+    color: #2196f3;
+}
+.pixel-home-icon > .fa-house,
+.about-btn > .fa-circle-info {
+    font-size: inherit;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+    margin: 0;
+    padding: 0;
+}
+.pixel-title {
+    flex: 1;
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin: 0;
+    color: #fff;
+    pointer-events: none;
+}
+
+/* About popout menu styles */
+.about-popout {
+    position: fixed;
+    top: 96px;
+    right: 48px;
+    min-width: 320px;
+    max-width: 90vw;
+    background: #232323 !important;
+    border-radius: 16px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.18);
+    padding: 0;
+    z-index: 100;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(-10px) scale(0.98);
+    transition: opacity 0.2s, transform 0.2s;
+}
+.about-popout[aria-hidden="false"] {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0) scale(1);
+}
+.about-popout-content {
+    padding: 32px 28px 28px 28px;
+    text-align: left;
+    background: transparent;
+    color: #e0e0e0;
+}
+.about-popout-content h2 {
+    margin-top: 0;
+    margin-bottom: 14px;
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #2196f3;
+}
+.about-popout-content p {
+    margin: 0;
+    font-size: 1.05rem;
+    line-height: 1.6;
+    color: #e0e0e0;
+}
+
+/* Pixel UI themed grid for simulations */
+.simulations-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+    margin: 40px auto;
+    max-width: 1200px;
+    padding: 0 16px;
+}
+
+.simulation-item {
+    background: #23272f;
+    border: 2px solid #3a3f4b;
+    border-radius: 16px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 24px 16px 20px 16px;
+    min-height: 220px;
+    transition: box-shadow 0.2s, border-color 0.2s;
+}
+.simulation-item:hover {
+    box-shadow: 0 4px 16px rgba(0,0,0,0.18);
+    border-color: #5c6bc0;
+}
+.simulation-image-placeholder {
+    width: 80px;
+    height: 80px;
+    background: #323846;
+    border-radius: 12px;
+    margin-bottom: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #6c7a89;
+    font-size: 2.2em;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+}
+.simulation-content h3 {
+    margin: 0 0 8px 0;
+    font-size: 1.18em;
+    color: #e3e6ee;
+    font-weight: 600;
+    letter-spacing: 0.01em;
+}
+.simulation-content p {
+    margin: 0;
+    color: #b0b6c3;
+    font-size: 0.98em;
+    line-height: 1.5;
+    text-align: center;
+}

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Wave Motion Simulation</title>
+    <link rel="stylesheet" href="../stylesheets/style.css">
+    <link rel="stylesheet" href="../stylesheets/homePage.css">
+    <link rel="stylesheet" href="../stylesheets/simulationUI.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.9.0/lib/p5.min.js"></script>
+</head>
+<body>
+    <nav class="pixel-navbar pixel-border-rounded">
+        <a href="../index.html" class="pixel-home-icon fa-solid fa-house" title="Home" aria-label="Home"></a>
+        <h1 class="pixel-title">Wave Motion</h1>
+        <button class="about-btn" title="About" aria-label="About">
+            <span class="fa-solid fa-circle-info"></span>
+        </button>
+        <div class="about-popout" id="aboutPopout" tabindex="-1" aria-hidden="true">
+            <div class="about-popout-content">
+                <h2>About</h2>
+                <p>
+                    This simulation demonstrates sinusoidal wave motion with adjustable amplitude, frequency, and wavelength. Observe wave propagation and interference patterns.
+                </p>
+            </div>
+        </div>
+    </nav>
+    <main class="pixel-main">
+        <div class="simulation-item pixel-border-rounded" style="width: 1200px; margin: 2rem auto; padding: 2rem 2rem 1.5rem 2rem; box-shadow: 0 2px 12px #0003; background: #23272e; display: flex; flex-direction: column; align-items: center;">
+            <h2 style="margin-bottom: 0.5rem; color: #b0c4ff;">Wave Motion</h2>
+            <p style="margin-bottom: 1.5rem; color: #b0c4ff; text-align: center;">Explore sinusoidal wave propagation with adjustable amplitude, frequency, and wavelength. Watch wave interference patterns and energy transmission. Press SPACE to pause, R to reset.</p>
+            <div id="simulation-canvas-placeholder" style="width: 1000px; height: 600px; display: flex; justify-content: center; align-items: center; background: #181a20; border-radius: 12px; margin-bottom: 1.5rem;"></div>
+            <div class="simulation-sliders" style="width: 100%; display: flex; flex-direction: column; align-items: center; gap: 1.2rem;">
+                <div class="simulation-slider-group">
+                    <label for="amplitudeSlider">amplitude (m)</label>
+                    <input type="range" id="amplitudeSlider" class="simulation-slider" min="0.1" max="2" value="1" step="0.1">
+                    <span class="simulation-slider-value" id="amplitudeValue">1 m</span>
+                </div>
+                <div class="simulation-slider-group">
+                    <label for="frequencySlider">frequency (Hz)</label>
+                    <input type="range" id="frequencySlider" class="simulation-slider" min="0.1" max="3" value="0.5" step="0.1">
+                    <span class="simulation-slider-value" id="frequencyValue">0.5 Hz</span>
+                </div>
+                <div class="simulation-slider-group">
+                    <label for="wavelengthSlider">wavelength (m)</label>
+                    <input type="range" id="wavelengthSlider" class="simulation-slider" min="1" max="8" value="4" step="0.2">
+                    <span class="simulation-slider-value" id="wavelengthValue">4 m</span>
+                </div>
+                <div style="text-align:center; color:#b0c4ff; font-size:0.95rem; margin-top:0.5rem;">Observe how wave properties affect propagation speed and pattern.</div>
+            </div>
+        </div>
+    </main>
+    <script src="../index.js"></script>
+    <script src="../SimulationJS/waveMotion.js"></script>
+</body>
+</html>
+

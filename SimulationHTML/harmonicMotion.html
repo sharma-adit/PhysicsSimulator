@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Simple Harmonic Motion Simulation</title>
+    <link rel="stylesheet" href="../stylesheets/style.css">
+    <link rel="stylesheet" href="../stylesheets/homePage.css">
+    <link rel="stylesheet" href="../stylesheets/simulationUI.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.9.0/lib/p5.min.js"></script>
+</head>
+<body>
+    <nav class="pixel-navbar pixel-border-rounded">
+        <a href="../index.html" class="pixel-home-icon fa-solid fa-house" title="Home" aria-label="Home"></a>
+        <h1 class="pixel-title">Simple Harmonic Motion</h1>
+        <button class="about-btn" title="About" aria-label="About">
+            <span class="fa-solid fa-circle-info"></span>
+        </button>
+        <div class="about-popout" id="aboutPopout" tabindex="-1" aria-hidden="true">
+            <div class="about-popout-content">
+                <h2>About</h2>
+                <p>
+                    This simulation demonstrates simple harmonic motion using a spring-mass system. Observe how the mass oscillates with period dependent on spring constant and mass.
+                </p>
+            </div>
+        </div>
+    </nav>
+    <main class="pixel-main">
+        <div class="simulation-item pixel-border-rounded" style="width: 1200px; margin: 2rem auto; padding: 2rem 2rem 1.5rem 2rem; box-shadow: 0 2px 12px #0003; background: #23272e; display: flex; flex-direction: column; align-items: center;">
+            <h2 style="margin-bottom: 0.5rem; color: #b0c4ff;">Simple Harmonic Motion</h2>
+            <p style="margin-bottom: 1.5rem; color: #b0c4ff; text-align: center;">Explore spring-mass oscillations with adjustable spring constant, mass, and damping. Watch energy conversion between kinetic and potential, and observe period relationships. Press SPACE to pause, R to reset.</p>
+            <div id="simulation-canvas-placeholder" style="width: 1000px; height: 600px; display: flex; justify-content: center; align-items: center; background: #181a20; border-radius: 12px; margin-bottom: 1.5rem;"></div>
+            <div class="simulation-sliders" style="width: 100%; display: flex; flex-direction: column; align-items: center; gap: 1.2rem;">
+                <div class="simulation-slider-group">
+                    <label for="springConstantSlider">spring constant (N/m)</label>
+                    <input type="range" id="springConstantSlider" class="simulation-slider" min="1" max="100" value="20" step="1">
+                    <span class="simulation-slider-value" id="springConstantValue">20 N/m</span>
+                </div>
+                <div class="simulation-slider-group">
+                    <label for="massSlider">mass (kg)</label>
+                    <input type="range" id="massSlider" class="simulation-slider" min="0.5" max="10" value="2" step="0.1">
+                    <span class="simulation-slider-value" id="massValue">2 kg</span>
+                </div>
+                <div class="simulation-slider-group">
+                    <label for="dampingSlider">damping coefficient</label>
+                    <input type="range" id="dampingSlider" class="simulation-slider" min="0" max="1" value="0.02" step="0.01">
+                    <span class="simulation-slider-value" id="dampingValue">0.02</span>
+                </div>
+                <div style="text-align:center; color:#b0c4ff; font-size:0.95rem; margin-top:0.5rem;">Adjust parameters to see effects on oscillation period and amplitude decay.</div>
+            </div>
+        </div>
+    </main>
+    <script src="../index.js"></script>
+    <script src="../SimulationJS/harmonicMotion.js"></script>
+</body>
+</html>
+

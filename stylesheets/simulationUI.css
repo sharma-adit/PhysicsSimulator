@@ -1,0 +1,271 @@
+/* General simulation UI styles for sliders and controls */
+.pixel-main.simulation-flex {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch; /* make both columns same height */
+  justify-content: center;
+  min-height: calc(100vh - 70px);
+  background: #181a20;
+  gap: 2vw;
+  width: 100vw;
+  box-sizing: border-box;
+}
+
+.simulation-canvas-area {
+  flex: 2 1 0;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-width: 0;
+  min-height: 0;
+  max-width: 70vw;
+  max-height: 90vh;
+  height: 80vh;
+  overflow: hidden;
+}
+
+.simulation-controls {
+  flex: 0 0 340px;
+  max-width: 340px;
+  min-width: 220px;
+  margin: 2rem 2rem 2rem 0;
+  align-self: stretch;
+  background: #23272e;
+  border-radius: 18px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 80vh;
+}
+
+.simulation-sliders {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.2rem;
+  height: 100%;
+  padding: 2rem 2rem;
+}
+
+.simulation-slider-group {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+  justify-content: center;
+}
+.simulation-slider-group label {
+  min-width: 90px;
+  color: #e0e0e0;
+  font-size: 1rem;
+  text-align: right;
+}
+
+.simulation-description {
+  max-width: 600px;
+  margin: 2rem auto 0 auto;
+  color: #b0c4ff;
+  text-align: center;
+}
+
+.simulation-slider {
+  flex: 1;
+  accent-color: #4f8cff;
+  height: 4px;
+  border-radius: 2px;
+  background: #2d3540;
+}
+.simulation-slider-value {
+  min-width: 48px;
+  text-align: right;
+  color: #b0c4ff;
+  font-size: 1rem;
+  font-family: monospace;
+}
+@media (max-width: 900px) {
+  .pixel-main.simulation-flex {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  .simulation-canvas-area {
+    max-width: 98vw;
+    max-height: 50vh;
+    height: 40vh;
+    align-items: flex-end;
+  }
+  .simulation-controls {
+    margin: 1rem auto;
+    max-width: 98vw;
+    min-width: 0;
+    padding: 0;
+    align-self: center;
+    height: auto;
+  }
+  .simulation-sliders {
+    padding: 1rem;
+    height: auto;
+  }
+}
+@media (max-width: 700px) {
+  .simulation-controls {
+    padding: 1rem;
+    max-width: 98vw;
+  }
+  .simulation-slider-group label {
+    min-width: 60px;
+    font-size: 0.95rem;
+  }
+  .simulation-slider-value {
+    min-width: 36px;
+    font-size: 0.95rem;
+  }
+}
+.simulation-grid-layout {
+  display: grid;
+  grid-template-columns: 2fr 340px;
+  grid-template-rows: 1fr auto;
+  grid-template-areas:
+    "sim sliders"
+    "desc sliders";
+  width: 100vw;
+  max-width: 1200px;
+  margin: 0 auto;
+  min-height: calc(100vh - 70px);
+  background: #181a20;
+  box-sizing: border-box;
+}
+.sim-grid-sim-area {
+  grid-area: sim;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 340px;
+  background: none;
+}
+.sim-grid-sliders {
+  grid-area: sliders;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding-top: 2rem;
+}
+.sim-grid-desc-area {
+  grid-area: desc;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.simulation-description {
+  margin: 2rem 0 0 0;
+  color: #b0c4ff;
+  text-align: left;
+  max-width: 700px;
+  width: 100%;
+  padding-left: 2rem;
+  box-sizing: border-box;
+}
+@media (max-width: 900px) {
+  .simulation-grid-layout {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto;
+    grid-template-areas:
+      "sim"
+      "sliders"
+      "desc";
+    max-width: 98vw;
+  }
+  .sim-grid-sliders {
+    padding-top: 0;
+    justify-content: center;
+  }
+  .simulation-description {
+    padding-left: 0;
+    text-align: center;
+    margin: 1rem 0 0 0;
+    max-width: 98vw;
+  }
+}
+
+/* Pixel UI container and layout for simulation - simplified borders */
+.simulation-container-pixel {
+  max-width: 1200px;
+  margin: 2rem auto;
+  background: #23272e;
+  border-radius: 18px;
+  box-shadow: 0 2px 12px 0 #0006;
+  padding: 2rem 2rem 2.5rem 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  border: 1.5px solid #4f8cff;
+}
+.sim-pixel-sim-area {
+  width: 100%;
+  min-height: 340px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #181a20;
+  border-radius: 12px;
+  box-shadow: 0 1px 4px #0004;
+  border: 1.5px solid #4f8cff;
+}
+.sim-pixel-desc-row {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+  align-items: flex-start;
+  width: 100%;
+}
+.simulation-description {
+  flex: 2 1 0;
+  min-width: 0;
+  color: #b0c4ff;
+  text-align: left;
+  font-size: 1.1rem;
+  background: #23272e;
+  border-radius: 8px;
+  padding: 1.2rem 1.5rem;
+  box-shadow: 0 1px 4px #0002;
+  border: 1.5px solid #4f8cff;
+}
+.sim-pixel-sliders {
+  flex: 1 1 340px;
+  min-width: 260px;
+  max-width: 340px;
+  background: #23272e;
+  border-radius: 8px;
+  box-shadow: 0 1px 4px #0002;
+  border: 1.5px solid #4f8cff;
+  padding: 1.2rem 1.2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+.simulation-sliders {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.2rem;
+}
+@media (max-width: 900px) {
+  .simulation-container-pixel {
+    padding: 1rem 0.5rem;
+    gap: 1.2rem;
+  }
+  .sim-pixel-desc-row {
+    flex-direction: column;
+    gap: 1.2rem;
+  }
+  .simulation-description, .sim-pixel-sliders {
+    max-width: 98vw;
+    width: 100%;
+    padding: 1rem 0.5rem;
+  }
+}

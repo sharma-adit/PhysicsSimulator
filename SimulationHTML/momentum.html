@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Conservation of Momentum Simulation</title>
+    <link rel="stylesheet" href="../stylesheets/style.css">
+    <link rel="stylesheet" href="../stylesheets/homePage.css">
+    <link rel="stylesheet" href="../stylesheets/simulationUI.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.9.0/lib/p5.min.js"></script>
+</head>
+<body>
+    <nav class="pixel-navbar pixel-border-rounded">
+        <a href="../index.html" class="pixel-home-icon fa-solid fa-house" title="Home" aria-label="Home"></a>
+        <h1 class="pixel-title">Conservation of Momentum</h1>
+        <button class="about-btn" title="About" aria-label="About">
+            <span class="fa-solid fa-circle-info"></span>
+        </button>
+        <div class="about-popout" id="aboutPopout" tabindex="-1" aria-hidden="true">
+            <div class="about-popout-content">
+                <h2>About</h2>
+                <p>
+                    This simulation demonstrates conservation of momentum in elastic and inelastic collisions between objects of different masses.
+                </p>
+            </div>
+        </div>
+    </nav>
+    <main class="pixel-main">
+        <div class="simulation-item pixel-border-rounded" style="width: 1200px; margin: 2rem auto; padding: 2rem 2rem 1.5rem 2rem; box-shadow: 0 2px 12px #0003; background: #23272e; display: flex; flex-direction: column; align-items: center;">
+            <h2 style="margin-bottom: 0.5rem; color: #b0c4ff;">Conservation of Momentum</h2>
+            <p style="margin-bottom: 1.5rem; color: #b0c4ff; text-align: center;">Simulate elastic and inelastic collisions and observe how momentum is conserved. Adjust masses and initial velocities to explore different collision scenarios.</p>
+            <div id="simulation-canvas-placeholder" style="width: 1000px; height: 600px; display: flex; justify-content: center; align-items: center; background: #181a20; border-radius: 12px; margin-bottom: 1.5rem;"></div>
+            <div class="simulation-sliders" style="width: 100%; display: flex; flex-direction: column; align-items: center; gap: 1.2rem;">
+                <div class="simulation-slider-group">
+                    <label for="mass1Slider">mass 1 (kg)</label>
+                    <input type="range" id="mass1Slider" class="simulation-slider" min="0.5" max="10" value="2" step="0.1">
+                    <span class="simulation-slider-value" id="mass1Value">2 kg</span>
+                </div>
+                <div class="simulation-slider-group">
+                    <label for="mass2Slider">mass 2 (kg)</label>
+                    <input type="range" id="mass2Slider" class="simulation-slider" min="0.5" max="10" value="3" step="0.1">
+                    <span class="simulation-slider-value" id="mass2Value">3 kg</span>
+                </div>
+                <div class="simulation-slider-group">
+                    <label for="velocitySlider">initial velocity (m/s)</label>
+                    <input type="range" id="velocitySlider" class="simulation-slider" min="1" max="10" value="5" step="0.5">
+                    <span class="simulation-slider-value" id="velocityValue">5 m/s</span>
+                </div>
+                <div style="text-align:center; color:#b0c4ff; font-size:0.95rem; margin-top:0.5rem;">Press SPACE to start collision | E to toggle elastic/inelastic</div>
+            </div>
+        </div>
+    </main>
+    <script src="../index.js"></script>
+    <script src="../SimulationJS/momentum.js"></script>
+</body>
+</html>
+
